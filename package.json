@@ -11,7 +11,7 @@
     "tape": "^4.2.2"
   },
   "scripts": {
-    "test": "tape test/**/*.js"
+    "test": "tape test/**/*.js | tap-spec"
   },
   "standard": {
     "globals": [ ]
