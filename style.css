@@ -1,0 +1,14 @@
+* {
+	margin: 0;
+	padding: 0;
+	border-collapse: collapse;
+	font-family: "Arial Black", Gadget, sans-serif
+}
+td {
+	height: 5px;
+	width: 5px;
+	/*border: 1px solid black;*/
+}
+.alive {
+	background-color: black;
+}
