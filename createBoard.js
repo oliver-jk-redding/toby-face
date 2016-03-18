@@ -10,9 +10,9 @@ function createBoard(size) {
 }
 module.exports = createBoard
 
-// function random(){
-//   if (Math.floor(Math.random() * 4) == 0) {
-//     return "*"
-//   }
-//   return " "
-// }
+function random(){
+  if (Math.floor(Math.random() * 4) == 0) {
+    return true
+  }
+  return false
+}
