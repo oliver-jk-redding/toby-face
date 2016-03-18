@@ -3,7 +3,7 @@ function createBoard(size) {
   for(var row = 0; row < size ; row++){
        board.push([])
     for (var col =0; col < size; col++){
-      board[row].push(" ")
+      board[row].push(false)
     }
   }
   return board
