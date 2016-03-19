@@ -51,7 +51,7 @@ function displayBoard(board) {
   var table = document.createElement('table')
   for(var row = 0; row < board.length; row++) {
   	var newRow = document.createElement('tr')
-  	for(var col = 0; col < board[0].length; col++) {
+  	for(var col = 0; col < board.length*2; col++) {
   		var newCell = document.createElement('td')
   		if(board[row][col] == true)
   			newCell.className = "alive"
