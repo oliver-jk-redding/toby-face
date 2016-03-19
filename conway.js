@@ -3,7 +3,7 @@ var nextCellState = require('./nextCellState')
 var createBoard = require('./createBoard')
 var nextBoard = require('./nextBoard')
 
-var board = createBoard(30)
+var board = createBoard(70)
 var nb = nextBoard(board)
 
 setInterval(function() {
