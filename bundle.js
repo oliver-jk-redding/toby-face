@@ -4,14 +4,14 @@ var nextCellState = require('./nextCellState')
 var createBoard = require('./createBoard')
 var nextBoard = require('./nextBoard')
 
-var board = createBoard(150)
+var board = createBoard(70)
 var nb = nextBoard(board)
 
 setInterval(function() {
 	var ob = nb	
 	nb = nextBoard(ob)
 	ob = nb
-}, 0.1)
+}, 1)
 },{"./countAliveNeighbours":2,"./createBoard":3,"./nextBoard":7,"./nextCellState":8}],2:[function(require,module,exports){
 var getNeighbours = require('./getNeighbours')
 function countAliveNeighbours(cellRow, cellColumn, board) {
