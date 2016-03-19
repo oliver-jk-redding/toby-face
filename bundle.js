@@ -51,7 +51,7 @@ function displayBoard(board) {
   var table = document.createElement('table')
   for(var row = 0; row < board.length; row++) {
   	var newRow = document.createElement('tr')
-  	for(var col = 0; col < board.length*2; col++) {
+  	for(var col = 0; col < board[0].length; col++) {
   		var newCell = document.createElement('td')
   		if(board[row][col] == true)
   			newCell.className = "alive"
@@ -70,7 +70,8 @@ function getNeighbours(cellRow, cellColumn, board) {
   var neighbours = []
   for(var x = cellRow-1; x <= cellRow+1; x++) {
     for(var y = cellColumn-1; y <= cellColumn+1; y++) {
-      if(!indicesOutOfBounds(x, y, board[0]) && board[x][y] != ' ') {
+    	console.log(board)
+      if(!indicesOutOfBounds(x, y, board[0]) && board[x][y] != false) {
         if(x != cellRow || y != cellColumn) {
           neighbours.push(board[x][y])
         }
