@@ -27,7 +27,7 @@ function createBoard(size) {
   var board = []
   for(var row = 0; row < size ; row++){
        board.push([])
-    for (var col =0; col < size; col++){
+    for (var col =0; col < size*2; col++){
       board[row].push(random())
     }
   }
