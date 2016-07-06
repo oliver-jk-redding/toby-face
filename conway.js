@@ -1,6 +1,13 @@
 var countAliveNeighbours = require('./countAliveNeighbours')
 var nextCellState = require('./nextCellState')
+var createBoard = require('./createBoard')
+var nextBoard = require('./nextBoard')
 
+var board = createBoard(70)
+var nb = nextBoard(board)
 
-exports.createBoard = createBoard
-exports.nextBoard = nextBoard
+setInterval(function() {
+	var ob = nb
+	nb = nextBoard(ob)
+	ob = nb
+}, 1)

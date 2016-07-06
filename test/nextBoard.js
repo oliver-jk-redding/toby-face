@@ -5,6 +5,10 @@ var nextBoard = require('../nextBoard')
 test('nextBoard', function (t) {
   (function() {
     var board = createBoard(10)
+    board[1][1] = true
+    board[1][2] = true
+    board[2][1] = true
+    board[2][2] = true
     var newBoard = nextBoard(board)
     t.not(newBoard, board, 'nextBoard returns a new array and not the array passed in')
   })()
