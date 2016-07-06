@@ -4,7 +4,7 @@ var nextCellState = require('./nextCellState')
 var createBoard = require('./createBoard')
 var nextBoard = require('./nextBoard')
 
-var board = createBoard(20)
+var board = createBoard(70)
 var nb = nextBoard(board)
 
 setInterval(function() {
@@ -38,7 +38,7 @@ function createBoard(size) {
 module.exports = createBoard
 
 function random(){
-  if (Math.floor(Math.random() * 10) == 0) {
+  if (Math.floor(Math.random() * 5) == 0) {
     return true
   }
   return false
