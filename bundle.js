@@ -47,7 +47,6 @@ function random(){
 },{"./displayBoard":4}],4:[function(require,module,exports){
 function displayBoard(board) {
   var r00t = document.querySelector('div')
-  console.log(r00t)
   r00t.innerHTML = ""
   var table = document.createElement('table')
   for(var row = 0; row < board.length; row++) {
@@ -62,7 +61,7 @@ function displayBoard(board) {
   }
   r00t.appendChild(table)
 }
-module.exports = displayBoard 
+module.exports = displayBoard
 
 },{}],5:[function(require,module,exports){
 var indicesOutOfBounds = require('./indicesOutOfBounds')

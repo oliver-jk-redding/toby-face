@@ -11,6 +11,6 @@ td {
 	/*border: 1px solid black;*/
 }
 .alive {
-	background-color: black;
-  background-image: '30x30-me.png';
+	background-image: './30x30-me.png';
+  background-size: cover;
 }
