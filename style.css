@@ -11,6 +11,6 @@ td {
 	/*border: 1px solid black;*/
 }
 .alive {
-	background-image: url('./30x30-me.png');
+	background-image: url('./20x20-me.png');
   background-size: cover;
 }
