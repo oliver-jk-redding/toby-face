@@ -4,14 +4,15 @@ var nextCellState = require('./nextCellState')
 var createBoard = require('./createBoard')
 var nextBoard = require('./nextBoard')
 
-var board = createBoard(70)
+var board = createBoard(25)
 var nb = nextBoard(board)
 
 setInterval(function() {
-	var ob = nb	
+	var ob = nb
 	nb = nextBoard(ob)
 	ob = nb
 }, 1)
+
 },{"./countAliveNeighbours":2,"./createBoard":3,"./nextBoard":7,"./nextCellState":8}],2:[function(require,module,exports){
 var getNeighbours = require('./getNeighbours')
 function countAliveNeighbours(cellRow, cellColumn, board) {
@@ -27,7 +28,7 @@ function createBoard(size) {
   var board = []
   for(var row = 0; row < size ; row++){
        board.push([])
-    for (var col =0; col < size*2; col++){
+    for (var col =0; col < size; col++){
       board[row].push(random())
     }
   }
@@ -37,7 +38,7 @@ function createBoard(size) {
 module.exports = createBoard
 
 function random(){
-  if (Math.floor(Math.random() * 6) == 0) {
+  if (Math.floor(Math.random() * 10) == 0) {
     return true
   }
   return false
@@ -46,11 +47,12 @@ function random(){
 },{"./displayBoard":4}],4:[function(require,module,exports){
 function displayBoard(board) {
   var r00t = document.querySelector('div')
+  console.log(r00t)
   r00t.innerHTML = ""
   var table = document.createElement('table')
   for(var row = 0; row < board.length; row++) {
   	var newRow = document.createElement('tr')
-  	for(var col = 0; col < board[0].length; col++) {
+  	for(var col = 0; col < board.length; col++) {
   		var newCell = document.createElement('td')
   		if(board[row][col] == true)
   			newCell.className = "alive"
@@ -69,9 +71,7 @@ function getNeighbours(cellRow, cellColumn, board) {
   var neighbours = []
   for(var x = cellRow-1; x <= cellRow+1; x++) {
     for(var y = cellColumn-1; y <= cellColumn+1; y++) {
-      // if(board[x])
-      // console.log(board)
-      if(!indicesOutOfBounds(x, y, board, board[0]) && board[x][y] != false) {
+      if(!indicesOutOfBounds(x, y, board[0]) && board[x][y] != ' ') {
         if(x != cellRow || y != cellColumn) {
           neighbours.push(board[x][y])
         }
@@ -81,12 +81,13 @@ function getNeighbours(cellRow, cellColumn, board) {
   return neighbours
 }
 
-module.exports = getNeighbours 
+module.exports = getNeighbours
+
 },{"./indicesOutOfBounds":6}],6:[function(require,module,exports){
 var outOfBounds = require('./outOfBounds')
 
-function indicesOutOfBounds(rowIndex, columnIndex, rowArr, colArr) {
-  return outOfBounds(rowIndex, rowArr) || outOfBounds(columnIndex, colArr)
+function indicesOutOfBounds(rowIndex, columnIndex, array) {
+  return outOfBounds(rowIndex, array) || outOfBounds(columnIndex, array)
 }
 
 
@@ -99,9 +100,9 @@ var displayBoard = require('./displayBoard')
 
 function nextBoard(currentBoard) {
   var newBoard = []
-  for (var i = 0; i < currentBoard.length; i++){
+  for (var i = 0; i< currentBoard.length; i++){
     newBoard.push([])
-    for (var j= 0; j < currentBoard[0].length; j++){
+    for (var j= 0; j < currentBoard.length; j++){
      if (nextCellState (currentBoard[i][j], countAliveNeighbours(i, j, currentBoard)))
         newBoard[i][j] = true
      else
