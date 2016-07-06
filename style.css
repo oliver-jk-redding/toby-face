@@ -4,7 +4,6 @@
 	border-collapse: collapse;
 	font-family: "Arial Black", Gadget, sans-serif;
 	background-color: white;
-  background-image: './30x30-me.png';
 }
 td {
 	height: 30px;
@@ -12,6 +11,6 @@ td {
 	/*border: 1px solid black;*/
 }
 .alive {
-	background-image: './30x30-me.png';
+	background-image: url('./30x30-me.png');
   background-size: cover;
 }
